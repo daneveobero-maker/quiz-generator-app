@@ -166,7 +166,7 @@ with st.sidebar:
     except (KeyError, FileNotFoundError):
         api_key = st.text_input("Enter your Gemini API Key", type="password")
     
-    model = st.selectbox("Select Gemini Model", ["gemini-1.5-flash", "gemini-1.5-pro"])
+    model = st.selectbox("Select Gemini Model", ["gemini-2.5-flash", "gemini-2.0-flash"])
     q_type = st.selectbox("Select Quiz Type", ["Multiple Choice", "Identification", "Short Answer", "True or False", "Modified True or False"])
     difficulty = st.selectbox("Select Difficulty", ["Easy", "Medium", "Hard"])
     term = st.selectbox("Select Term", ["Semester", "Summer"])
@@ -266,3 +266,4 @@ if st.button("🚀 Generate Quiz", disabled=(not uploaded_files)):
             )
     else:
         st.error("No valid quiz data was generated from any of the files.")
+
